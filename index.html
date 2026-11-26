@@ -31,14 +31,14 @@
   </header>
   <main class="wrap main">
     <section class="view active" id="accueil-view">
-      <div class="section-head"><div><div class="eyebrow">Saison en préparation</div><h2>Bienvenue dans la compétition</h2></div><p>Les tirages sont publiés. Consultez Calendrier pour les journées et les affiches.</p></div>
+      <div class="section-head"><div><div class="eyebrow">Saison officiellement lancée</div><h2>Première journée : 27 novembre</h2></div><p>Les tirages sont publiés. Choisissez une journée dans Calendrier et jouez avant 23 h 59, heure de Lomé.</p></div>
       <div class="grid">
         <article class="card"><div class="card-top"><div><div class="kicker">La règle du tournoi</div><h3>Deux matchs par jour maximum</h3><p>Chaque participant peut jouer jusqu’à deux matchs officiels dans la journée, contre deux adversaires différents.</p></div><div class="mini-icon">⚽</div></div></article>
         <article class="card"><div class="card-top"><div><div class="kicker">Votre équipe</div><h3>Votre Dream Team</h3><p>Chaque joueur utilise son équipe Dream Team, avec ses joueurs et son entraîneur habituels.</p></div><div class="mini-icon">🎮</div></div></article>
         <article class="card"><div class="card-top"><div><div class="kicker">Classements</div><h3>Deux classements indépendants</h3><p>Le classement de la phase de ligue de la Ligue des Champions est séparé de celui du Championnat.</p></div><div class="mini-icon">🏆</div></div></article>
         <article class="card"><div class="card-top"><div><div class="kicker">Mise à jour</div><h3>Suivi public</h3><p>Les informations publiées sur cette page sont consultables par tous. Le lien pourra être partagé dans la communauté WhatsApp.</p></div><div class="mini-icon">📊</div></div></article>
       </div>
-      <div style="height:14px"></div><div class="note"><strong>Départage :</strong> les critères en cas d’égalité au classement restent à confirmer avant le lancement. Aucun match, tirage ou score n’a encore été publié.</div>
+      <div style="height:14px"></div><div class="note"><strong>Départage :</strong> Départage au Championnat et en phase de ligue : points, différence de buts, buts marqués, confrontation directe, puis tirage au sort organisé si l’égalité persiste. La première journée commence le 27 novembre.</div>
     </section>
 
     <section class="view" id="competitions"><div class="section-head"><div><div class="eyebrow">Quatre titres officiels</div><h2>Les compétitions</h2></div><p>La Ligue des Champions est la compétition principale. Le Championnat et les coupes donnent plusieurs objectifs à chaque joueur.</p></div>
@@ -85,6 +85,7 @@
     function show(id){document.querySelectorAll('.view').forEach(v=>v.classList.toggle('active',v.id===id));document.querySelectorAll('.nav button').forEach(b=>b.classList.toggle('active',b.dataset.tab===id));window.scrollTo({top:document.querySelector('header').offsetTop,behavior:'smooth'})}
     document.querySelectorAll('.nav button').forEach(b=>b.addEventListener('click',()=>show(b.dataset.tab)));
     document.querySelectorAll('[data-go]').forEach(b=>b.addEventListener('click',()=>show(b.dataset.go==='participants'?'participants':b.dataset.go)));
+    if(new URLSearchParams(window.location.search).has('calendar'))show('calendrier');
   </script>
 </body>
 </html>
